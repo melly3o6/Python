@@ -2,6 +2,7 @@
 # Import Libraries
 
 from ursina import *
+
 #############################################################
 # Initialize Libraries
 app = Ursina()
@@ -9,9 +10,10 @@ app = Ursina()
 #############################################################
 # Define Constant Variables
 
-current_color = color.hex('#A06090')
+current_color = color.hex('#008800')
 
-CUBE = Entity(model="cube", color=current_color, scale=(0.5, 0.5, 2))
+CUBE = Entity(model="cube", color=current_color, texture="tilemap_test_level", scale=2)
+
 
 #############################################################
 # Images
@@ -29,7 +31,6 @@ CUBE = Entity(model="cube", color=current_color, scale=(0.5, 0.5, 2))
 
 
 def update():
-
     # ROTATE CONTROLS
 
     if held_keys['w']:
@@ -56,6 +57,7 @@ def update():
         CUBE.y -= 1
 
     print(f"POSITION: X = {CUBE.x} Y = {CUBE.y} | ROTATION: X = {CUBE.rotation_x} Y = {CUBE.rotation_y}")
+
 
 #############################################################
 # Main Loop
